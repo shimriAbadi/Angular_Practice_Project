@@ -1,0 +1,58 @@
+<div [ngStyle]="{'height':innerHigh-90+'px'}">
+  <h1 style="text-align: center;">Edit Employee</h1>
+  <div *ngIf="employee | async as employee" class="row CenterDiv"> >
+    <div class="col-2">
+      <div class="card centerDiv border border-info border-2" style="width: 18rem;">
+        <img class="card-img-top" src="{{employee.image}}" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title" >{{employee.jobName}}</h4>
+          <h5 class="card-title">{{employee.fullName}} - {{employee.id}}</h5>
+          <p class="card-text">The employee is <b>{{employee.age}}</b> years old. <br>
+            This employee lives in <b>{{employee.city}}</b>.
+          </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="card text-white bg-primary">Working Details</li>
+          <li class="list-group-item">Total Monthly Hours - <b>{{employee.monthlyWorkingHours}}</b></li>
+          <li class="list-group-item">employee Cost Rate - <b>{{employee.costRate}}</b></li>
+          <li class="list-group-item" [ngStyle]="{'background-color':employee.costRate*employee.monthlyWorkingHours <= 3000? '#FF4646':'#A1CAE2'}">Total Paycheck - <b>{{employee.costRate*employee.monthlyWorkingHours}}</b> </li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="col-2 mainFormDiv">
+
+      <div class="input-group input-group-sm FormDiv" style="width: 1000px;">
+        <span class="input-group-text inputLabel" id="inputGroup-sizing-sm">Image</span>
+        <input type="text" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm" [(ngModel)]="employee.image">
+      </div>
+      <div class="input-group input-group-sm FormDiv" style="width: 1000px;">
+        <span class="input-group-text inputLabel" id="inputGroup-sizing-sm">Full Name</span>
+        <input type="text" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm" [(ngModel)]="employee.fullName">
+      </div>
+      <div class="input-group input-group-sm FormDiv" style="width: 1000px;">
+        <span class="input-group-text inputLabel" id="inputGroup-sizing-sm">Age</span>
+        <input type="number" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm" [(ngModel)]="employee.age">
+      </div>
+      <div class="input-group input-group-sm FormDiv" style="width: 1000px;">
+        <span class="input-group-text inputLabel" id="inputGroup-sizing-sm">City</span>
+        <input type="text" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm" [(ngModel)]="employee.city">
+      </div>
+      <div class="input-group input-group-sm FormDiv" style="width: 1000px;">
+        <span class="input-group-text inputLabel" id="inputGroup-sizing-sm">Total Monthly Hours</span>
+        <input type="number" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm" [(ngModel)]="employee.monthlyWorkingHours">
+      </div>
+      <div class="input-group input-group-sm FormDiv" style="width: 1000px;">
+        <span class="input-group-text inputLabel" id="inputGroup-sizing-sm">employee Cost Rate</span>
+        <input type="number" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm" [(ngModel)]="employee.costRate">
+      </div>
+      <button type="button" class="btn btn-success" (click)="goBack()" >Save Data</button>
+    </div>
+  </div>
+</div>

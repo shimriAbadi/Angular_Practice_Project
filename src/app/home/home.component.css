@@ -1,0 +1,38 @@
+.MainDiv::before {
+  overflow-x: hidden;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.6;
+  background-image: url("https://www.maldronhotelbelfastcity.com/wp-content/uploads/sites/10/2019/05/Queens-University-Belfast.jpg");
+}
+
+.mainTitle{
+  font-size: 72px;
+  background-color: #2b4162;
+  background: -webkit-linear-gradient(315deg, #2b4162 0%, #12100e 74%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+.btn-primary {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.TrensperentDiv{
+  width: 50%;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.5);
+  text-align:center;
+
+}
+
+button:hover{
+  background-color: #8A8A8A;
+}

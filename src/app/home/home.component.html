@@ -1,0 +1,91 @@
+<div class="MainDiv" [ngStyle]="{'height':innerHigh-80+'px'}">
+  <div>
+    <h1 class="mainTitle">Welcome to <br> Technology Academic School</h1>
+
+    <div class="TrensperentDiv">
+      <h2><b>Mission Statement</b></h2>
+      <p style="padding-bottom: 10px;">
+        <b>
+          TAS is committed to improving the world today and for future generations <br>
+          through outstanding research and scholarship, education, preservation, and <br>
+          practice. TAS educates aspiring leaders worldwide who serve all sectors of society. <br>
+          We carry out this mission through the free exchange of ideas in an ethical, <br>
+          interdependent, and diverse community of faculty, staff, students, and alumni.
+        </b>
+      </p>
+    </div>
+
+    <div class="row text-center text-center align-middle" [ngStyle]="{'margin-top':(innerHigh/20)+'px'}">
+      <div class="col-4">
+        <button type="button" class="btn btn-dark col-6 rounded-pill text-center"
+          routerLink="/teachers-list">Teachers</button>
+
+          <div style="margin-top: 20px; padding-top: 30px; padding-bottom: 30px;" class="TrensperentDiv rounded-pill ">
+            <p>
+              <b>
+
+                We have the {{numberOfTeachers}} <br>
+                best lecturers in the world. <br>
+                And you can find them <br>
+                in our following departments:
+
+                <ul style="width: 75%; margin: 0 auto;">
+                  <li *ngFor="let dep of departments" >
+                    {{dep.className}}
+                  </li>
+                </ul>
+
+              </b>
+            </p>
+          </div>
+
+      </div>
+      <div class="col-4">
+        <button type="button" class="btn btn-dark col-6 rounded-pill text-center "
+          routerLink="/employees-list">Employees</button>
+
+          <div style="margin-top: 20px; padding-top: 30px; padding-bottom: 30px;" class="TrensperentDiv rounded-pill ">
+            <p>
+              <b>
+                Here you can find {{numberOfEmployee}} <br>
+                loyal staff members. <br>
+                in the following professions: <br>
+
+                <ul style="width: 60%; margin: 0 auto;">
+                  <li *ngFor="let employee of employees" >
+                    {{employee.jobName}}
+                  </li>
+                </ul>
+
+              </b>
+            </p>
+          </div>
+
+      </div>
+      <div class="col-4">
+        <button type="button" class="btn btn-dark col-6 rounded-pill text-center"
+        routerLink="/pupils-list">Pupils</button>
+
+        <div style="margin-top: 20px; padding-top: 30px; padding-bottom: 30px;" class="TrensperentDiv rounded-pill ">
+          <p>
+            <b>
+              Here you can find {{numberOfEmployee}} <br>
+              loyal staff members. <br>
+              in the following professions: <br>
+
+              In our academic school you <br>
+              find 6,326 pupils <br>
+              Examined and selected <br>
+              with great care <br>
+              To maximize excellence <br>
+
+
+
+            </b>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

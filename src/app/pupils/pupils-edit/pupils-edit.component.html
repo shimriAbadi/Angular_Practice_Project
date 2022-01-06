@@ -1,0 +1,60 @@
+<div [ngStyle]="{'height':innerHigh-90+'px'}">
+  <h1 style="text-align: center;">Edit Pupil</h1>
+  <div *ngIf="pupil | async as pupil" class="row CenterDiv"> >
+    <div class="col-2">
+      <div class="card centerDiv border border-info border-2" style="width: 18rem;">
+        <img class="card-img-top" src="{{pupil.image}}" alt="Card image cap">
+        <div class="card-body">
+          <!-- <h4 class="card-title" >{{pupil.jobName}}</h4> -->
+          <h5 class="card-title">{{pupil.fullName}} - {{pupil.id}}</h5>
+          <p class="card-text">The pupil is <b>{{pupil.age}}</b> years old. <br>
+            This pupil lives in <b>{{pupil.city}}</b>.
+          </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="card text-white bg-primary">Classes & Grade</li>
+          <li class="list-group-item" *ngFor="let grade of pupil.gradeInfo" ><b>{{grade.className}} - {{grade.grade}}</b></li>
+          <li class="card text-white bg-primary">AVG Grade</li>
+          <li class="list-group-item" [ngStyle]="{'background-color':avgGrade(pupil)<65?'#FF4646':'#A1CAE2'}"
+          >{{avgGrade(pupil)}}</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="col-2 mainFormDiv">
+
+      <div class="input-group input-group-sm FormDiv" style="width: 1000px;">
+        <span class="input-group-text inputLabel" id="inputGroup-sizing-sm">Image</span>
+        <input type="text" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm" [(ngModel)]="pupil.image">
+      </div>
+      <div class="input-group input-group-sm FormDiv" style="width: 1000px;">
+        <span class="input-group-text inputLabel" id="inputGroup-sizing-sm">Full Name</span>
+        <input type="text" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm" [(ngModel)]="pupil.fullName">
+      </div>
+      <div class="input-group input-group-sm FormDiv" style="width: 1000px;">
+        <span class="input-group-text inputLabel" id="inputGroup-sizing-sm">City</span>
+        <input type="text" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm" [(ngModel)]="pupil.city">
+      </div>
+      <div class="input-group input-group-sm FormDiv" style="width: 1000px;">
+        <span class="input-group-text inputLabel" id="inputGroup-sizing-sm">Age</span>
+        <input type="number" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm" [(ngModel)]="pupil.age">
+      </div>
+
+      <div *ngFor="let class of pupil.gradeInfo"
+      class="input-group input-group-sm FormDiv" style="width: 1000px;">
+        <span
+         class="input-group-text inputLabel" id="inputGroup-sizing-sm">{{class.className}}</span>
+        <input type="number" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm" [(ngModel)]="class.grade">
+      </div>
+
+      <button type="button" class="btn btn-success" (click)="goBack()" >Save Data</button>
+    </div>
+
+
+  </div>
+</div>

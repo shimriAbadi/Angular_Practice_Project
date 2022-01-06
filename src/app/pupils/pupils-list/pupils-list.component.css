@@ -1,0 +1,18 @@
+.centerDiv{
+  margin: auto;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.row{
+  margin-top: 4rem;
+}
+
+.card-img-top{
+  width:284px;
+  height:192px;
+}
+
+button:hover{
+  background-color: #FFE9CC;
+}

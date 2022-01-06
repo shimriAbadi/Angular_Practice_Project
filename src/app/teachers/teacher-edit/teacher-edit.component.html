@@ -1,0 +1,70 @@
+<div [ngStyle]="{'height':innerHigh-90+'px'}">
+  <h1 style="text-align: center;">Edit Teacher</h1>
+  <div *ngIf="teacher | async as teacher" class="row CenterDiv"> >
+    <div class="col-2">
+      <div class="card border border-info border-2" style="width: 18rem;">
+        <img class="card-img-top" src="{{teacher.image}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{teacher.fullName}} - {{teacher.id}}</h5>
+          <p class="card-text">The teacher is <b>{{teacher.age}}</b> years old. <br>
+            This teacher have <b>{{teacher.seniority}}</b> of seniority. <br>
+            This teacher lives in <b>{{teacher.city}}</b>.
+          </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="card text-white bg-primary">Professions</li>
+          <li class="list-group-item"><b>{{teacher.professions}}</b></li>
+          <li class="card text-white bg-primary">Working Details</li>
+          <li class="list-group-item">Total Monthly Hours - <b>{{teacher.monthlyWorkingHours}}</b></li>
+          <li class="list-group-item">Teacher Cost Rate - <b>{{teacher.costRate}}</b></li>
+          <li class="list-group-item">Total Paycheck - <b>{{teacher.costRate*teacher.monthlyWorkingHours}}</b> </li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="col-2 mainFormDiv">
+
+      <div class="input-group input-group-sm FormDiv" style="width: 1000px;">
+        <span class="input-group-text inputLabel" id="inputGroup-sizing-sm">Image</span>
+        <input type="text" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm" [(ngModel)]="teacher.image">
+      </div>
+      <div class="input-group input-group-sm FormDiv" style="width: 1000px;">
+        <span class="input-group-text inputLabel" id="inputGroup-sizing-sm">Full Name</span>
+        <input type="text" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm" [(ngModel)]="teacher.fullName">
+      </div>
+      <div class="input-group input-group-sm FormDiv" style="width: 1000px;">
+        <span class="input-group-text inputLabel" id="inputGroup-sizing-sm">Age</span>
+        <input type="number" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm" [(ngModel)]="teacher.age">
+      </div>
+      <div class="input-group input-group-sm FormDiv" style="width: 1000px;">
+        <span class="input-group-text inputLabel" id="inputGroup-sizing-sm">Seniority</span>
+        <input type="number" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm" [(ngModel)]="teacher.seniority">
+      </div>
+      <div class="input-group input-group-sm FormDiv" style="width: 1000px;">
+        <span class="input-group-text inputLabel" id="inputGroup-sizing-sm">City</span>
+        <input type="text" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm" [(ngModel)]="teacher.city">
+      </div>
+      <div class="input-group input-group-sm FormDiv" style="width: 1000px;">
+        <span class="input-group-text inputLabel" id="inputGroup-sizing-sm">Professions</span>
+        <input type="text" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm" [(ngModel)]="teacher.professions">
+      </div>
+      <div class="input-group input-group-sm FormDiv" style="width: 1000px;">
+        <span class="input-group-text inputLabel" id="inputGroup-sizing-sm">Total Monthly Hours</span>
+        <input type="number" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm" [(ngModel)]="teacher.monthlyWorkingHours">
+      </div>
+      <div class="input-group input-group-sm FormDiv" style="width: 1000px;">
+        <span class="input-group-text inputLabel" id="inputGroup-sizing-sm">Teacher Cost Rate</span>
+        <input type="number" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm" [(ngModel)]="teacher.costRate">
+      </div>
+      <button type="button" class="btn btn-success" (click)="goBack()" >Save Data</button>
+    </div>
+  </div>
+</div>
